@@ -6,22 +6,26 @@
     <div class="app-brand justify-content-center">
       <a href="index.html" class="app-brand-link gap-2">
         <span class="app-brand-logo demo"></span>
-        <span class="app-brand-text demo text-uppercase fw-bolder">E-Commerce</span>
+        <span class="app-brand-text demo text-uppercase fw-bolder">E-commerce</span>
       </a>
     </div>
     <!-- /Logo -->
-    <form action="register_proses.php" class="mb-3" method="POST">
+    <form action="register_process.php" class="mb-3" method="POST">
+    <div class="mb-3">
+        <label for="nama" class="form-label">Nama</label>
+        <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama" />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" placeholder="Masukkan Email" />
+      </div>
       <div class="mb-3">
         <label for="username" class="form-label">Username</label>
         <input type="text" class="form-control" name="username" placeholder="Masukkan Username" autofocus/>
       </div>
       <div class="mb-3">
-        <label for="email" class="form-label">Nama</label>
-        <input type="text" class="form-control" name="name" placeholder="Masukkan Nama" />
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" name="email" placeholder="Masukkan Email" />
+        <label for="alamat" class="form-label">Alamat</label>
+        <input type="text" class="form-control" name="alamat" placeholder="Masukkan alamat" />
       </div>
       <div class="mb-3 form-password-toggle">
         <label class="form-label" for="password">Password</label>
@@ -31,14 +35,10 @@
           <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
         </div>
       </div>
-      <div class="mb-3">
-     <label for="textarea" class="form-label">Alamat</label>
-    <textarea class="form-control" name="alamat" placeholder="Masukkan alamat"></textarea>
-    </div>
       <button class="btn btn-primary d-grid w-100">Daftar</button>
     </form>
     <p class="text-center">
-      <span>Sudah memiliki akun?</span><a href="login_pelanggan.php"><span> Masuk</span></a>
+      <span>Sudah memiliki akun?</span><a href="login.php"><span> Masuk</span></a>
     </p>
   </div>
 </div>
