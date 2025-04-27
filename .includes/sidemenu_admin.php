@@ -28,12 +28,12 @@
       <ul class="menu-sub">
         <li class="menu-item">
           <a href="posts_produk.php" class="menu-link">
-            <div data-i18n="Basic Inputs">Daftar Produk</div>
+            <div data-i18n="Basic Inputs">Tambah_Produk</div>
           </a>
         </li>
         <li class="menu-item">
           <a href="post_produk.php" class="menu-link">
-            <div data-i18n="Basic Inputs">Tambah Produk</div>
+            <div data-i18n="Basic Inputs">Pemesanan</div>
           </a>
         </li>
         <li class="menu-item">
