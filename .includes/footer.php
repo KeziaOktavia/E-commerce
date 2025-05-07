@@ -6,7 +6,7 @@
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  <a href="#" target="_blank" class="footer-link fw-bolder">E-commerce</a>.
+                  <a href="#" target="_blank" class="footer-link fw-bolder">SHOMERCE</a>.
                   All rights reserved.
                 </div>
                 <div>
