@@ -4,7 +4,7 @@
 $host = "localhost"; // Nama host server daatabase
 $username = "root"; // Username untuk akses database
 $password = ""; // Password untuk akses database
-$database = "e_commerce"; // Nama database yang digunakan
+$database = "e-commerce"; // Nama database yang digunakan
 
 // Membuat koneksi ke database menggunakan MySQL i
 $conn = mysqli_connect($host, $username, $password, $database);
