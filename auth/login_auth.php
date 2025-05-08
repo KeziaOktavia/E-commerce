@@ -2,61 +2,70 @@
 session_start();
 require_once("../config.php");
 
-$email = mysqli_real_escape_string($conn, $_POST['email']);
-$password = mysqli_real_escape_string($conn, $_POST['password']);
+// Cek apakah form dikirim melalui metode POST
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Ambil dan sanitasi input email dan password
+    $email = mysqli_real_escape_string($conn, $_POST["email"]);
+    $password = mysqli_real_escape_string($conn, $_POST["password"]);
 
-$query = "SELECT * FROM pelanggan WHERE email = '$email'";
-$result = mysqli_query($conn, $query);
+    // Ambil data pengguna dari database berdasarkan email
+    $sql = "SELECT * FROM pelanggan WHERE email = '$email'";
+    $result = $conn->query($sql);
 
-if ($result && mysqli_num_rows($result) > 0) {
-    $data = mysqli_fetch_assoc($result);
+    // Periksa apakah pengguna ditemukan
+    if ($result && $result->num_rows > 0) {
+        $row = $result->fetch_assoc();
 
-    if ($data['role'] === 'admin') {
-        if ($password === $data['password']) {
-            $_SESSION['email'] = $data['email'];
-            $_SESSION['username'] = $data['username'];
-            $_SESSION['role'] = 'admin';
-            header("Location: ../dashboard_admin.php");
-            exit();
+        // Verifikasi password
+        $validPassword = false;
+        if ($row["role"] === "admin") {
+            // Admin: password disimpan tanpa hash (plain text)
+            $validPassword = ($password === $row["password"]);
         } else {
-            $_SESSION['notification'] = [
-                'type' => 'danger',
-                'message' => 'Email atau password salah!'
-            ];
-            header("Location: login.php");
-            exit();
+            // Pelanggan: password diverifikasi menggunakan hashing
+            $validPassword = password_verify($password, $row["password"]);
         }
-    } elseif ($data['role'] === 'pelanggan') {
-        if (password_verify($password, $data['password'])) {
-            $_SESSION['email'] = $data['email'];
-            $_SESSION['username'] = $data['username'];
-            $_SESSION['role'] = 'pelanggan';
-            header("Location: ../dashboard_pelanggan.php");
+
+        if ($validPassword) {
+            // Set session pengguna setelah login berhasil
+            $_SESSION["email"] = $row["email"];
+            $_SESSION["username"] = $row["username"];
+            $_SESSION["role"] = $row["role"];
+            $_SESSION["user_id"] = $row["id"]; // Asumsi kolom 'id' adalah primary key
+
+            // Set notifikasi selamat datang
+            $_SESSION['notification'] = [
+                'type' => 'primary',
+                'message' => 'Selamat Datang Kembali!'
+            ];
+
+            // Redirect ke dashboard sesuai role
+            if ($row["role"] === "admin") {
+                header("Location: ../dashboard_admin.php");
+            } else {
+                header("Location: ../dashboard_pelanggan.php");
+            }
             exit();
         } else {
+            // Password salah
             $_SESSION['notification'] = [
                 'type' => 'danger',
-                'message' => 'Email atau password salah!'
+                'message' => 'Email atau Password salah'
             ];
-            header("Location: login.php");
-            exit();
         }
     } else {
+        // Email tidak ditemukan di database
         $_SESSION['notification'] = [
             'type' => 'danger',
-            'message' => 'Role tidak dikenali.'
+            'message' => 'Email atau Password salah'
         ];
-        header("Location: login.php");
-        exit();
     }
-} else {
-    $_SESSION['notification'] = [
-        'type' => 'danger',
-        'message' => 'Email atau password salah!'
-    ];
+
+    // Redirect kembali ke halaman login jika login gagal
     header("Location: login.php");
     exit();
 }
 
-mysqli_close($conn);
+// Tutup koneksi database
+$conn->close();
 ?>
