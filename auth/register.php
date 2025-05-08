@@ -6,7 +6,7 @@
     <div class="app-brand justify-content-center">
       <a href="index.html" class="app-brand-link gap-2">
         <span class="app-brand-logo demo"></span>
-        <span class="app-brand-text demo text-uppercase fw-bolder">E-commerce</span>
+        <span class="app-brand-text demo text-uppercase fw-bolder">SHOMERCE</span>
       </a>
     </div>
     <!-- /Logo -->
@@ -25,7 +25,7 @@
       </div>
       <div class="mb-3">
         <label for="alamat" class="form-label">Alamat</label>
-        <input type="text" class="form-control" name="alamat" placeholder="Masukkan alamat" />
+        <input type="text" class="form-control" name="alamat" placeholder="Masukkan alamat lengkap" />
       </div>
       <div class="mb-3 form-password-toggle">
         <label class="form-label" for="password">Password</label>
