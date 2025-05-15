@@ -13,9 +13,10 @@ include "init_session.php";
     initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard &mdash; E-commerce</title>
+    <title>Dashboard &mdash; SHOMERCE</title>
+    <!-- CSS -->
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/logo.jpeg" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/vendor/fonts/boxicons.css" />
@@ -36,15 +37,21 @@ include "init_session.php";
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="assets/js/config.js"></script>
+    <!-- Tambahkan di <head> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
   </head>
   <body>
+  
+
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar">
-      <div class="layout-container">
-        <?php include "sidemenu.php"; ?>
-        <!-- Layout container -->
-        <div class="layout-page">
-          <?php include "navbar.php"; ?>
-          <!-- Content wrapper -->
-          <div class="content-wrapper">
-            <!-- Content -->
+<div class="layout-wrapper layout-content-navbar">
+    <!-- Layout container -->
+    <div class="layout-page">
+      <?php include "navbar_pelanggan.php"; ?>
+      <!-- Content wrapper -->
+      <div class="content-wrapper">
+      </div>
+    </div>
+  </div>
+</div>

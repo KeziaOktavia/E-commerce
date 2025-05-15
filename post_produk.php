@@ -53,6 +53,9 @@ include '.includes/header_admin.php';
 ?>
 </select>
 </div>
+<!-- Textarea untuk deskripsi Produk -->
+
+
 <!-- Tombol submit -->
  <button type="submit" name="simpan" class="btn btn-primary">Posting Produk</button>
 </form>
