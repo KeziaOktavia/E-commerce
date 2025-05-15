@@ -13,7 +13,7 @@ include "init_session.php";
     initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard &mdash; E-commerce</title>
+    <title>Dashboard &mdash; SHOMERCE</title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
     <!-- Fonts -->
@@ -47,4 +47,3 @@ include "init_session.php";
           <?php include "navbar.php"; ?>
           <!-- Content wrapper -->
           <div class="content-wrapper">
-            <!-- Content -->
