@@ -1,0 +1,30 @@
+
+.bg-custom {
+  position: center;
+  background-image: url('../img/tampilan/tampilan.webp');
+  background-size: auto 90.90%;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  width: 96%; /* Menyesuaikan lebar kotak dengan lebar elemen induk */
+  height: 400px; /* Menentukan tinggi kotak secara pasti */
+  padding: 20px;
+  margin-top: 0; /* Hapus margin-top jika ada jarak tambahan */
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  flex-direction: column;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'poppins', sans-serif;
+  background-attachment: fixed;  /* gambar ikut bergerak kalau di scroll */
+}
+.bg-custom h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 50px; /* Mengurangi jarak antara judul dan elemen di bawahnya */
+  color: #f2f2f2;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(10, 67, 77, 0.7); /* Glow biru */
+}
+
