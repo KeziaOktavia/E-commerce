@@ -9,13 +9,14 @@ include "init_session.php";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <!-- Mengatur viewport agar tampilan responsif di berbagai perangkat -->
     <meta name="viewport" content="width=device-width,
     initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
+    <!-- Judul halaman yang muncul di tab browser -->
     <title>Dashboard &mdash; SHOMERCE</title>
-    <!-- CSS -->
-    <!-- Favicon -->
+      <!-- Favicon untuk ikon tab browser -->
     <link rel="icon" type="image/x-icon" href="assets/img/logo/logo.jpeg" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
@@ -37,9 +38,8 @@ include "init_session.php";
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="assets/js/config.js"></script>
-    <!-- Tambahkan di <head> -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
   </head>
   <body>
   
@@ -49,7 +49,7 @@ include "init_session.php";
     <!-- Layout container -->
     <div class="layout-page">
       <?php include "navbar_pelanggan.php"; ?>
-      <!-- Content wrapper -->
+       <!-- Pembungkus konten utama halaman -->
       <div class="content-wrapper">
       </div>
     </div>
