@@ -1,6 +1,7 @@
 <!-- Navbar -->
  <!-- box di atas buat navbar -->
- <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+<?php $current_page = basename($_SERVER['PHP_SELF']); ?>
+<nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
   <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
     <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
       <i class="bx bx-menu bx-sm"></i>
@@ -18,13 +19,13 @@
     <!-- Navbar Menu -->
     <ul class="navbar-nav flex-row align-items-center ms-auto">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="dashboard_pelanggan.php">HOME |</a>
+        <a class="nav-link <?= ($current_page === 'dashboard_pelanggan.php') ? 'active' : '' ?>" href="dashboard_pelanggan.php">HOME |</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">PRODUK |</a>
+        <a class="nav-link <?= ($current_page === 'produk_pelanggan.php') ? 'active' : '' ?>" href="produk_pelanggan.php">PRODUK |</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="detail_pesanan.php">DETAIL PEMESANAN |</a>
+        <a class="nav-link <?= ($current_page === 'detail_pesanan.php') ? 'active' : '' ?>" href="detail_pesanan.php">DETAIL PEMESANAN |</a>
       </li>
       <li class="nav-item ms-2">
         <a href="auth/logout.php" class="btn btn-danger">
@@ -36,4 +37,3 @@
 
   </div>
 </nav>
-<!-- / Navbar -->
