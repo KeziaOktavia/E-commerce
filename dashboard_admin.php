@@ -104,7 +104,6 @@ include(".includes/toast_notification.php");
                   </div>
                 </div>
               </div>
-
             <?php endwhile; ?>
           </tbody>
         </table>
